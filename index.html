@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discovery Alert – AI Trade Alerts</title>
+  <style>
+    :root {
+      --bg: #f4f4f9;
+      --card: #ffffff;
+      --text: #222222;
+      --gold: #f0c674;
+      --accent: #66b2ff;
+      --gray: #666666;
+      --header-bg: #ffffff;
+      --header-text: #222222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Segoe UI", sans-serif; }
+    body { background: var(--bg); color: var(--text); line-height: 1.6; scroll-behavior: smooth; }
+
+    /* Header / Nav */
+    header { background: var(--header-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top:0; z-index:999; }
+    .nav-container { max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:1rem; }
+    .logo { font-size:1.5rem; font-weight:bold; color: var(--gold); }
+    nav a { margin-left:1.5rem; text-decoration:none; color: var(--header-text); font-weight:500; transition: color 0.3s; }
+    nav a:hover { color: var(--accent); }
+
+    /* Hero */
+    .hero { text-align:center; padding:6rem 1rem; background: linear-gradient(to right, #66b2ff33, #ffffff); position: relative; }
+    .hero h1 { color: var(--text); font-size:2.5rem; margin-bottom:1rem; }
+    .hero p { max-width:700px; margin:0 auto 2rem; font-size:1.2rem; }
+    .cta-btn { background: var(--gold); color:#000; padding:1rem 2rem; border:none; border-radius:8px; cursor:pointer; font-size:1.1rem; font-weight:bold; transition:background 0.3s; }
+    .cta-btn:hover { background:#e6b84c; }
+
+    /* Video Container */
+    .video-container { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; margin:2rem auto; border-radius:12px; }
+    .video-container iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+    /* Sections */
+    section { padding:4rem 1rem; max-width:1100px; margin:auto; }
+    section h2 { color: var(--text); text-align:center; margin-bottom:2rem; font-size:2rem; }
+    .features { display:grid; gap:1.5rem; }
+    .card { background: var(--card); padding:1.5rem; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    .card h3 { color: var(--accent); margin-bottom:0.5rem; }
+    table { width:100%; border-collapse: collapse; margin-top:1rem; }
+    table, th, td { border: 1px solid var(--gray); padding:0.75rem; text-align:center; }
+    th { background: var(--card); color: var(--gold); }
+
+    /* Footer */
+    footer { text-align:center; padding:2rem; background:#eaeaea; font-size:0.9rem; color: var(--gray); }
+
+    /* Floating CTA */
+    .floating-cta { position: fixed; bottom:20px; right:20px; background: var(--gold); color:#000; padding:1rem 1.5rem; border-radius:50px; font-weight:bold; font-size:1rem; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999; transition: transform 0.2s, background 0.3s; }
+    .floating-cta:hover { background:#e6b84c; transform:scale(1.05); }
+    @media(max-width:600px){ .floating-cta{ left:20px; right:20px; border-radius:12px; text-align:center; font-size:1.1rem; } }
+
+    /* Modal */
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index:1000; justify-content:center; align-items:center; }
+    .modal-content { background: var(--card); padding:2rem; border-radius:12px; width:90%; max-width:500px; text-align:center; color: var(--text); box-shadow:0 4px 20px rgba(0,0,0,0.2); position:relative; }
+    .modal-content h2 { color: var(--gold); margin-bottom:1rem; }
+    .close-btn { background:none; border:none; color: var(--gray); font-size:1.5rem; position:absolute; top:20px; right:30px; cursor:pointer; }
+
+    /* Scroll-down arrow */
+    .scroll-down { display:block; margin:2rem auto 0; font-size:2rem; color: var(--gold); cursor:pointer; animation: bounce 2s infinite; text-decoration:none; }
+    @keyframes bounce { 0%,20%,50%,80%,100%{transform:translateY(0);} 40%{transform:translateY(-10px);} 60%{transform:translateY(-5px);} }
+
+    @media (min-width:768px) { .features { grid-template-columns: repeat(3,1fr); } }
+  </style>
+</head>
+<body>
+
+  <!-- Header Nav -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Discovery Alert</div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#ai-alerts">AI Alerts</a>
+        <a href="#discovery-alerts">Discovery Alerts</a>
+        <a href="#plans">Plans</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>AI Trade Alerts – Your Weekly Mining Intelligence</h1>
+    <p>Cut through 500+ daily ASX announcements. Get 5–10 weekly AI-powered alerts highlighting the drilling results that matter most. Delivered within seconds of ASX release.</p>
+    <button class="cta-btn open-modal">Get My 14-Day Free Trial</button>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="AI Trade Alerts Explainer" allowfullscreen></iframe>
+    </div>
+    <a href="#ai-alerts" class="scroll-down">&#x25BC;</a>
+  </section>
+
+  <!-- AI Alerts Section -->
+  <section id="ai-alerts">
+    <h2>AI Trade Alerts</h2>
+    <div class="features">
+      <div class="card"><h3>GxM Score (AuEq)</h3><p>Standardized benchmark across 30+ commodities.</p></div>
+      <div class="card"><h3>Market Cap & Cash</h3><p>Understand upside potential and financial runway.</p></div>
+      <div class="card"><h3>Drill Context</h3><p>Every result categorized for investment clarity.</p></div>
+    </div>
+  </section>
+
+  <!-- Discovery Alerts Section -->
+  <section id="discovery-alerts">
+    <h2>Discovery Alerts</h2>
+    <div class="features">
+      <div class="card"><h3>Automatic SMS</h3><p>Be notified instantly when all three factors converge.</p></div>
+      <div class="card"><h3>Rare Signals</h3><p>Only the most exceptional opportunities trigger alerts.</p></div>
+      <div class="card"><h3>Proven Winners</h3><p>Historic signals captured discoveries like WA1 and DEG.</p></div>
+    </div>
+  </section>
+
+  <!-- GxM Score Table -->
+  <section>
+    <h2>Understanding the GxM Score</h2>
+    <table>
+      <tr><th>Commodity</th><th>Intercept</th><th>AuEq Conversion</th><th>GxM Score</th></tr>
+      <tr><td>Gold</td><td>50m @ 2 g/t</td><td>2 g/t AuEq</td><td>100</td></tr>
+      <tr><td>Copper</td><td>100m @ 1.2% Cu</td><td>2.65 g/t AuEq</td><td>265</td></tr>
+      <tr><td>Lithium</td><td>60m @ 1800ppm</td><td>1.8 g/t AuEq</td><td>108</td></tr>
+    </table>
+  </section>
+
+  <!-- Past Performance -->
+  <section>
+    <h2>Past Discovery Performance</h2>
+    <div class="features">
+      <div class="card" style="text-align:center;"><h3>WA1 Resources (WA1)</h3><p style="font-size:1.5rem; color:var(--gold); font-weight:bold;">+10,211%</p></div>
+      <div class="card" style="text-align:center;"><h3>De Grey Mining (DEG)</h3><p style="font-size:1.5rem; color:var(--gold); font-weight:bold;">+2,962%</p></div>
+      <div class="card" style="text-align:center;"><h3>AusQuest (AQD)</h3><p style="font-size:1.5rem; color:var(--gold); font-weight:bold;">+400%</p></div>
+</div>
+
+</section> <!-- Subscription Plans --> <section id="plans"> <h2>Subscription Plans</h2> <div class="features"> <div class="card" style="text-align:center;"> <h3>Monthly</h3> <p style="font-size:1.5rem; font-weight:bold;">$99.99</p> <button class="cta-btn open-modal">Start Free Trial</button> </div> <div class="card" style="text-align:center;"> <h3>Annual</h3> <p style="font-size:1.5rem; font-weight:bold;">$995</p> <button class="cta-btn open-modal">Start Free Trial</button> </div> </div> <p style="text-align:center; margin-top:1rem;">14-Day Free Trial • Cancel Anytime</p> </section> <!-- Footer --> <footer> Discovery Alert Pty Ltd (CAR No 001 303 958) is an Authorized Representative of ShareX Pty Ltd (AFSL No 519872).<br> We provide information only, not financial advice. Past performance is not indicative of future results. </footer> <!-- Floating CTA -->
+
+<button class="floating-cta open-modal">Start Free Trial</button>
+
+<!-- Modal --> <div class="modal" id="subscribeModal"> <div class="modal-content"> <button class="close-btn" id="closeModal">&times;</button> <h2>Start Your Free Trial</h2> <p>Choose a plan below to activate your 14-day free trial:</p> <a href="STRIPE_OR_PAYPAL_MONTHLY_LINK" target="_blank"><button class="cta-btn">Monthly – $99.99</button></a> <a href="STRIPE_OR_PAYPAL_ANNUAL_LINK" target="_blank"><button class="cta-btn">Annual – $995</button></a> <p style="font-size:0.9rem; color:var(--gray); margin-top:1rem;">Cancel anytime during the trial. Tax-deductible for investment purposes.</p> </div> </div> <script> // Modal functionality const modal = document.getElementById('subscribeModal'); const openBtns = document.querySelectorAll('.open-modal'); const closeBtn = document.getElementById('closeModal'); openBtns.forEach(btn => { btn.addEventListener('click', () => { modal.style.display = 'flex'; }); }); closeBtn.addEventListener('click', () => { modal.style.display = 'none'; }); window.addEventListener('click', (e) => { if(e.target === modal){ modal.style.display='none'; }}); </script> </body> </html> ```
